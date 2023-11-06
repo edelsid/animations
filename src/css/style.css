@@ -1,0 +1,152 @@
+body {
+   padding: 40px;
+   position: relative;
+   height: 500px;
+}
+
+.widget {
+   width: 25%;
+}
+
+.tooltip_area {
+   margin-bottom: 25px;
+}
+
+.tooltip_btn {
+   background-color: royalblue;
+   border: 0;
+   border-radius: 8px;
+   font-family: 'Arial';
+   color: white;
+   width: 6em;
+   height: 3em;
+   transition: background-color 1s;
+}
+
+.tooltip_btn:hover {
+   background-color: rgb(37, 78, 202);
+   cursor: pointer;
+}
+
+.tooltip {
+   border: 1px solid lightgray;
+   padding: 10px;
+   border-radius: 8px;
+   width: 90%;
+   margin-top: 15px;
+   animation: open 0.5s linear 0s normal;
+   overflow: hidden;
+}
+
+@keyframes open {
+   from {
+      max-height: 0;
+   }
+   to {
+      max-height: 500px;
+   }
+}
+
+@keyframes close {
+   from {
+      max-height: 500px;
+   }
+
+   to {
+      max-height: 0;
+   }
+}
+
+.options {
+   font-family: 'Arial';
+   color: grey;
+   font-size: 12px;
+   display: block;
+   text-align: end;
+}
+
+.chat_btn {
+   position: sticky;
+   top: 100%;
+   left: 100%;
+   content: '';
+   height: 50px;
+   width: 50px;
+   background-color: red;
+   border: none;
+   border-radius: 50%;
+   transition-duration: 0.5s;
+}
+
+.chat_btn:hover {
+   cursor: pointer;
+   transform: scale(1.5);
+}
+
+.chat_window {
+   display: none;
+   position: sticky;
+   top: 100%;
+   left: 100%;
+   content: '';
+   width: 300px;
+   background-color: white;
+   border: 1px solid lightgrey;
+   border-radius: 8px;
+   padding: 15px;
+   animation: chat_close 0.3s linear 0s forwards;
+}
+
+@keyframes chat_open {
+   from {
+      scale: 0;
+   }
+   to {
+      scale: 1;
+   }
+}
+
+@keyframes chat_close {
+   from {
+      scale: 1;
+   }
+
+   to {
+      scale: 0;
+   }
+}
+
+.header {
+   font-family: system-ui;
+   font-size: 18px;
+   font-weight: bold;
+   margin: 0;
+}
+
+.message {
+   resize: none;
+   display: block;
+   margin-top: 10px;
+   width: calc(100% - 20px);
+   height: 180px;
+   padding: 10px;
+   border: 1px solid lightgrey;
+   border-radius: 8px;
+}
+
+.send {
+   height: 3em;
+   margin-top: 10px;
+   width: 100%;
+   border: 1px solid lightgrey;
+   border-radius: 8px;
+}
+
+.exit::before {
+   position: absolute;
+   content: 'X';
+   font-family: 'Arial';
+   font-weight: bold;
+   font-size: 14px;
+   left: 92%;
+}
